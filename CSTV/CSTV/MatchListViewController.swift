@@ -21,12 +21,14 @@ class MatchListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        service.loadMatches().subscribe(onNext: { [weak self] matches in
-            print("matches: \(matches)")
-            self?.matches = matches
-            self?.tableView.reloadData()
-        })
-        .disposed(by: bag)
+        Observable.zip(service.loadRunningMatches().catchAndReturn([]), service.loadUpcomingMatches().catchAndReturn([]))
+            .map { $0.0 + $0.1 }
+            .subscribe(onNext: { [weak self] matches in
+                print("matches: \(matches)")
+                self?.matches = matches
+                self?.tableView.reloadData()
+            })
+            .disposed(by: bag)
         
         bind()
         setupUI()
@@ -34,11 +36,22 @@ class MatchListViewController: UIViewController {
     
     func bind() {
         tableView.dataSource = self
-        
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.register(MatchCell.self, forCellReuseIdentifier: "MatchCell")
     }
     
     func setupUI() {
+        title = "Partidas"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .backgroundDarkBlue
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -59,8 +72,8 @@ extension MatchListViewController: UITableViewDataSource {
             preconditionFailure("Cell not registered")
         }
         
-        cell.backgroundColor = [UIColor.red, UIColor.blue, UIColor.green].randomElement()
-        
+        let match = matches[indexPath.row]
+        cell.configure(with: match)
         return cell
     }
 }
