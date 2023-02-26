@@ -22,7 +22,9 @@
 		C217FF7329ABCB0B00BB317F /* MatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C217FF7229ABCB0B00BB317F /* MatchCell.swift */; };
 		C217FF7629ABD78E00BB317F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C217FF7529ABD78E00BB317F /* Kingfisher */; };
 		C217FF7829ABEF3E00BB317F /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C217FF7729ABEF3E00BB317F /* UIColor+Extensions.swift */; };
-		C217FF7A29AC056B00BB317F /* CellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C217FF7929AC056B00BB317F /* CellConfigurable.swift */; };
+		C217FF7A29AC056B00BB317F /* ViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C217FF7929AC056B00BB317F /* ViewConfigurable.swift */; };
+		C217FF7C29AC0FAB00BB317F /* MatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C217FF7B29AC0FAB00BB317F /* MatchDetailViewController.swift */; };
+		C217FF7E29AC124600BB317F /* MatchTeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C217FF7D29AC124600BB317F /* MatchTeamsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +60,9 @@
 		C217FF6829ABC46500BB317F /* MatchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchService.swift; sourceTree = "<group>"; };
 		C217FF7229ABCB0B00BB317F /* MatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCell.swift; sourceTree = "<group>"; };
 		C217FF7729ABEF3E00BB317F /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
-		C217FF7929AC056B00BB317F /* CellConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurable.swift; sourceTree = "<group>"; };
+		C217FF7929AC056B00BB317F /* ViewConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfigurable.swift; sourceTree = "<group>"; };
+		C217FF7B29AC0FAB00BB317F /* MatchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailViewController.swift; sourceTree = "<group>"; };
+		C217FF7D29AC124600BB317F /* MatchTeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTeamsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,10 +120,12 @@
 				C217FF3429ABC29100BB317F /* AppDelegate.swift */,
 				C217FF3629ABC29100BB317F /* SceneDelegate.swift */,
 				C217FF6629ABC40900BB317F /* MatchListViewController.swift */,
+				C217FF7B29AC0FAB00BB317F /* MatchDetailViewController.swift */,
 				C217FF7229ABCB0B00BB317F /* MatchCell.swift */,
 				C217FF6829ABC46500BB317F /* MatchService.swift */,
 				C217FF7729ABEF3E00BB317F /* UIColor+Extensions.swift */,
-				C217FF7929AC056B00BB317F /* CellConfigurable.swift */,
+				C217FF7929AC056B00BB317F /* ViewConfigurable.swift */,
+				C217FF7D29AC124600BB317F /* MatchTeamsView.swift */,
 				C217FF3D29ABC29300BB317F /* Assets.xcassets */,
 				C217FF3F29ABC29300BB317F /* LaunchScreen.storyboard */,
 				C217FF4229ABC29300BB317F /* Info.plist */,
@@ -286,12 +292,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C217FF7329ABCB0B00BB317F /* MatchCell.swift in Sources */,
+				C217FF7C29AC0FAB00BB317F /* MatchDetailViewController.swift in Sources */,
 				C217FF7829ABEF3E00BB317F /* UIColor+Extensions.swift in Sources */,
-				C217FF7A29AC056B00BB317F /* CellConfigurable.swift in Sources */,
+				C217FF7A29AC056B00BB317F /* ViewConfigurable.swift in Sources */,
 				C217FF3529ABC29100BB317F /* AppDelegate.swift in Sources */,
 				C217FF3729ABC29100BB317F /* SceneDelegate.swift in Sources */,
 				C217FF6729ABC40900BB317F /* MatchListViewController.swift in Sources */,
 				C217FF6929ABC46500BB317F /* MatchService.swift in Sources */,
+				C217FF7E29AC124600BB317F /* MatchTeamsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

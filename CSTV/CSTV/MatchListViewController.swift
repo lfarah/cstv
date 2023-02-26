@@ -36,6 +36,7 @@ class MatchListViewController: UIViewController {
     
     func bind() {
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(MatchCell.self, forCellReuseIdentifier: "MatchCell")
     }
@@ -75,5 +76,13 @@ extension MatchListViewController: UITableViewDataSource {
         let match = matches[indexPath.row]
         cell.configure(with: match)
         return cell
+    }
+}
+
+extension MatchListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let match = matches[indexPath.row]
+        let detailVC = MatchDetailViewController(match: match)
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }
