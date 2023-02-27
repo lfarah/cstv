@@ -26,6 +26,13 @@ class MatchListViewController: UIViewController {
         return view
     }()
     
+    private lazy var spinner = {
+        let view = UIActivityIndicatorView(style: .large)
+        view.tintColor = .white
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     let viewModel = MatchListViewModel()
     
     override func viewDidLoad() {
@@ -41,9 +48,11 @@ class MatchListViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(type: MatchCell.self)
         
-        viewModel.matches.subscribe(onNext: { [weak self] _ in
+        viewModel.matches.subscribe(onNext: { [weak self] values in
             self?.tableView.reloadData()
             self?.refreshControl.endRefreshing()
+            self?.spinner.startAnimating()
+            self?.spinner.isHidden = !values.isEmpty
         })
         .disposed(by: bag)
         
@@ -73,11 +82,16 @@ class MatchListViewController: UIViewController {
         navigationController?.navigationBar.tintColor = .white
         
         view.addSubview(tableView)
+        view.addSubview(spinner)
+
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 }
 

@@ -27,6 +27,13 @@ class MatchDetailViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    private lazy var spinner = {
+        let view = UIActivityIndicatorView(style: .large)
+        view.tintColor = .white
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
         
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -47,8 +54,10 @@ class MatchDetailViewController: UIViewController {
         collectionView.register(type: PlayerCell.self)
         
         viewModel.players
-            .subscribe(onNext: { [weak self] _ in
+            .subscribe(onNext: { [weak self] values in
                 self?.collectionView.reloadData()
+                self?.spinner.startAnimating()
+                self?.spinner.isHidden = !values.isEmpty
             })
             .disposed(by: bag)
     }
@@ -58,11 +67,15 @@ class MatchDetailViewController: UIViewController {
         title = "\(viewModel.match.league.name) \(viewModel.match.serie.name ?? "")"
         
         view.addSubview(collectionView)
-        
+        view.addSubview(spinner)
+
         collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 }
 
