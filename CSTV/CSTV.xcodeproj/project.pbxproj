@@ -29,6 +29,8 @@
 		C217FF8229AC224500BB317F /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C217FF8129AC224500BB317F /* PlayerCell.swift */; };
 		C217FF8429AC373700BB317F /* MatchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C217FF8329AC373700BB317F /* MatchListViewModel.swift */; };
 		C217FF8629AC391B00BB317F /* MatchDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C217FF8529AC391B00BB317F /* MatchDetailViewModel.swift */; };
+		C217FF8829AC3B6F00BB317F /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C217FF8729AC3B6F00BB317F /* AppService.swift */; };
+		C217FF8A29AC3D1600BB317F /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C217FF8929AC3D1600BB317F /* Keys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		C217FF8129AC224500BB317F /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
 		C217FF8329AC373700BB317F /* MatchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListViewModel.swift; sourceTree = "<group>"; };
 		C217FF8529AC391B00BB317F /* MatchDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailViewModel.swift; sourceTree = "<group>"; };
+		C217FF8729AC3B6F00BB317F /* AppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppService.swift; sourceTree = "<group>"; };
+		C217FF8929AC3D1600BB317F /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,8 @@
 				C217FF7D29AC124600BB317F /* MatchTeamsView.swift */,
 				C217FF7F29AC202100BB317F /* MatchTeamsHeader.swift */,
 				C217FF8129AC224500BB317F /* PlayerCell.swift */,
+				C217FF8729AC3B6F00BB317F /* AppService.swift */,
+				C217FF8929AC3D1600BB317F /* Keys.swift */,
 				C217FF3D29ABC29300BB317F /* Assets.xcassets */,
 				C217FF3F29ABC29300BB317F /* LaunchScreen.storyboard */,
 				C217FF4229ABC29300BB317F /* Info.plist */,
@@ -307,11 +313,13 @@
 				C217FF7C29AC0FAB00BB317F /* MatchDetailViewController.swift in Sources */,
 				C217FF7829ABEF3E00BB317F /* UIColor+Extensions.swift in Sources */,
 				C217FF7A29AC056B00BB317F /* ViewConfigurable.swift in Sources */,
+				C217FF8A29AC3D1600BB317F /* Keys.swift in Sources */,
 				C217FF8429AC373700BB317F /* MatchListViewModel.swift in Sources */,
 				C217FF3529ABC29100BB317F /* AppDelegate.swift in Sources */,
 				C217FF8629AC391B00BB317F /* MatchDetailViewModel.swift in Sources */,
 				C217FF8229AC224500BB317F /* PlayerCell.swift in Sources */,
 				C217FF3729ABC29100BB317F /* SceneDelegate.swift in Sources */,
+				C217FF8829AC3B6F00BB317F /* AppService.swift in Sources */,
 				C217FF6729ABC40900BB317F /* MatchListViewController.swift in Sources */,
 				C217FF8029AC202100BB317F /* MatchTeamsHeader.swift in Sources */,
 				C217FF6929ABC46500BB317F /* MatchService.swift in Sources */,
