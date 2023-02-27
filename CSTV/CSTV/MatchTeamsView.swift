@@ -23,7 +23,7 @@ class MatchTeamsView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.textAlignment = .center
         view.font = .systemFont(ofSize: 12)
-        view.textColor = .lightGray
+        view.textColor = .white.withAlphaComponent(0.5)
         view.text = "vs"
         return view
     }()
@@ -42,7 +42,6 @@ class MatchTeamsView: UIView {
         let view = UIImageView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleAspectFit
-        view.backgroundColor = .lightGray
         return view
     }()
     
@@ -50,7 +49,6 @@ class MatchTeamsView: UIView {
         let view = UIImageView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleAspectFit
-        view.backgroundColor = .lightGray
         return view
     }()
     
@@ -169,7 +167,7 @@ extension MatchTeamsView: ViewConfigurable {
             team1ImageView.clipsToBounds = false
         } else {
             team1ImageURL = nil
-            team1ImageView.backgroundColor = .lightGray
+            team1ImageView.backgroundColor = .imagePlaceholderGray
             team1ImageView.layer.cornerRadius = 60 / 2
             team1ImageView.clipsToBounds = true
         }
@@ -181,7 +179,7 @@ extension MatchTeamsView: ViewConfigurable {
             team2ImageView.clipsToBounds = false
         } else {
             team2ImageURL = nil
-            team2ImageView.backgroundColor = .lightGray
+            team2ImageView.backgroundColor = .imagePlaceholderGray
             team2ImageView.layer.cornerRadius = 60 / 2
             team2ImageView.clipsToBounds = true
         }

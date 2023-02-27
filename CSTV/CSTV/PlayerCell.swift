@@ -47,7 +47,7 @@ class PlayerCell: UICollectionViewCell {
         let view = UILabel(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.font = .systemFont(ofSize: 12)
-        view.textColor = .lightGray
+        view.textColor = .textSecondary
         view.textAlignment = .right
         return view
     }()
@@ -56,7 +56,7 @@ class PlayerCell: UICollectionViewCell {
         let view = UIImageView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleAspectFill
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .imagePlaceholderGray
         view.layer.cornerRadius = 8
         view.clipsToBounds = true
         return view
@@ -67,7 +67,6 @@ class PlayerCell: UICollectionViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .backgroundLightBlue
         view.layer.cornerRadius = 12
-
         return view
     }()
 
@@ -92,7 +91,6 @@ class PlayerCell: UICollectionViewCell {
     }
         
     func layout() {
-//        clipsToBounds = true
         addSubview(containerView)
         
         containerView.addSubview(nicknameLabel)

@@ -79,7 +79,7 @@ class MatchDetailViewController: UIViewController {
     }
     
     func setupLayout() {
-        view.backgroundColor = .red
+        navigationItem.largeTitleDisplayMode = .never
         title = "\(match.league.name) \(match.serie.name ?? "")"
         
         view.addSubview(collectionView)
@@ -115,7 +115,7 @@ extension MatchDetailViewController: UICollectionViewDelegate, UICollectionViewD
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "MatchTeamsHeader", for: indexPath) as? MatchTeamsHeader else {
                 preconditionFailure("Header not supported")
             }
-            headerView.teamsView.configure(with: match)
+            headerView.configure(with: match)
             return headerView
         default:
             preconditionFailure("Only headers supported")
@@ -123,7 +123,7 @@ extension MatchDetailViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 120)
+        return CGSize(width: collectionView.frame.width, height: 140)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

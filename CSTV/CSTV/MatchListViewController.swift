@@ -52,6 +52,8 @@ class MatchListViewController: UIViewController {
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.barTintColor = .white
+        navigationController?.navigationBar.tintColor = .white
 
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false

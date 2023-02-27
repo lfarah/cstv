@@ -39,7 +39,7 @@ class MatchCell: UITableViewCell {
     private lazy var dateContainerView: UIView = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.lightGray
+        view.backgroundColor = UIColor.backgroundGray
         view.clipsToBounds = true
         view.layer.cornerRadius = 16
         view.layer.maskedCorners = [.layerMinXMaxYCorner]
@@ -57,7 +57,7 @@ class MatchCell: UITableViewCell {
         let view = UIImageView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleAspectFit
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .imagePlaceholderGray
         return view
     }()
     
@@ -99,6 +99,7 @@ class MatchCell: UITableViewCell {
     
     func setupUI() {
         backgroundColor = .backgroundDarkBlue
+        selectionStyle = .none
         
         // TODO: Move to constants
         
@@ -160,16 +161,16 @@ extension MatchCell: ViewConfigurable {
             leagueImageView.clipsToBounds = false
         } else {
             leagueImageURL = nil
-            leagueImageView.backgroundColor = .lightGray
+            leagueImageView.backgroundColor = .imagePlaceholderGray
             leagueImageView.layer.cornerRadius = 16 / 2
             leagueImageView.clipsToBounds = true
         }
         
         switch content.parsedStatus {
         case .running:
-            dateContainerView.backgroundColor = .red
+            dateContainerView.backgroundColor = .backgroundRed
         default:
-            dateContainerView.backgroundColor = .gray
+            dateContainerView.backgroundColor = .backgroundGray
         }
     }
 }
