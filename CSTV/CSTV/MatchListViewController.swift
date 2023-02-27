@@ -33,7 +33,7 @@ class MatchListViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.register(MatchCell.self, forCellReuseIdentifier: "MatchCell")
+        tableView.register(type: MatchCell.self)
         
         viewModel.matches.subscribe(onNext: { [weak self] _ in
             self?.tableView.reloadData()
@@ -73,9 +73,7 @@ extension MatchListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MatchCell", for: indexPath) as? MatchCell else {
-            preconditionFailure("Cell not registered")
-        }
+        let cell = tableView.dequeueReusableCell(type: MatchCell.self, indexPath: indexPath)
         
         let match = viewModel.matches.value[indexPath.row]
         cell.configure(with: match)
@@ -83,6 +81,7 @@ extension MatchListViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - UITableViewDelegate
 extension MatchListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let match = viewModel.matches.value[indexPath.row]

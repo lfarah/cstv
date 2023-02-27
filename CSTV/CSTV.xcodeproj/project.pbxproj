@@ -31,6 +31,8 @@
 		C217FF8629AC391B00BB317F /* MatchDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C217FF8529AC391B00BB317F /* MatchDetailViewModel.swift */; };
 		C217FF8829AC3B6F00BB317F /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C217FF8729AC3B6F00BB317F /* AppService.swift */; };
 		C217FF8A29AC3D1600BB317F /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C217FF8929AC3D1600BB317F /* Keys.swift */; };
+		C217FF8C29AC3DCF00BB317F /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C217FF8B29AC3DCF00BB317F /* UITableView+Extensions.swift */; };
+		C217FF8E29AC3E8800BB317F /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C217FF8D29AC3E8800BB317F /* UICollectionView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		C217FF8529AC391B00BB317F /* MatchDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailViewModel.swift; sourceTree = "<group>"; };
 		C217FF8729AC3B6F00BB317F /* AppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppService.swift; sourceTree = "<group>"; };
 		C217FF8929AC3D1600BB317F /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		C217FF8B29AC3DCF00BB317F /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		C217FF8D29AC3E8800BB317F /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,8 @@
 				C217FF7229ABCB0B00BB317F /* MatchCell.swift */,
 				C217FF6829ABC46500BB317F /* MatchService.swift */,
 				C217FF7729ABEF3E00BB317F /* UIColor+Extensions.swift */,
+				C217FF8B29AC3DCF00BB317F /* UITableView+Extensions.swift */,
+				C217FF8D29AC3E8800BB317F /* UICollectionView+Extensions.swift */,
 				C217FF7929AC056B00BB317F /* ViewConfigurable.swift */,
 				C217FF7D29AC124600BB317F /* MatchTeamsView.swift */,
 				C217FF7F29AC202100BB317F /* MatchTeamsHeader.swift */,
@@ -310,8 +316,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C217FF7329ABCB0B00BB317F /* MatchCell.swift in Sources */,
+				C217FF8E29AC3E8800BB317F /* UICollectionView+Extensions.swift in Sources */,
 				C217FF7C29AC0FAB00BB317F /* MatchDetailViewController.swift in Sources */,
 				C217FF7829ABEF3E00BB317F /* UIColor+Extensions.swift in Sources */,
+				C217FF8C29AC3DCF00BB317F /* UITableView+Extensions.swift in Sources */,
 				C217FF7A29AC056B00BB317F /* ViewConfigurable.swift in Sources */,
 				C217FF8A29AC3D1600BB317F /* Keys.swift in Sources */,
 				C217FF8429AC373700BB317F /* MatchListViewModel.swift in Sources */,

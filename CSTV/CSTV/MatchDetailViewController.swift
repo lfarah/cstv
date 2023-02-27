@@ -43,8 +43,8 @@ class MatchDetailViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        collectionView.register(MatchTeamsHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "MatchTeamsHeader")
-        collectionView.register(PlayerCell.self, forCellWithReuseIdentifier: "PlayerCell")
+        collectionView.register(type: MatchTeamsHeader.self, kind: UICollectionView.elementKindSectionHeader)
+        collectionView.register(type: PlayerCell.self)
         
         viewModel.players
             .subscribe(onNext: { [weak self] _ in
@@ -72,9 +72,7 @@ extension MatchDetailViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlayerCell", for: indexPath) as? PlayerCell else {
-            preconditionFailure("PlayerCell not created")
-        }
+        let cell = collectionView.dequeueReusableCell(type: PlayerCell.self, indexPath: indexPath)
         
         let player = viewModel.players.value[indexPath.row]
         cell.configure(with: player)
@@ -87,9 +85,7 @@ extension MatchDetailViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
-            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "MatchTeamsHeader", for: indexPath) as? MatchTeamsHeader else {
-                preconditionFailure("Header not supported")
-            }
+            let headerView = collectionView.dequeueReusableSupplementaryView(type: MatchTeamsHeader.self, kind: kind, indexPath: indexPath)
             headerView.configure(with: viewModel.match)
             return headerView
         default:
