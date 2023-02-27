@@ -9,17 +9,23 @@ import UIKit
 import RxSwift
 
 class MatchListViewController: UIViewController {
-
+    
     let service = MatchService()
     
     let bag = DisposeBag()
     
-    lazy var tableView: UITableView = {
+    private lazy var tableView: UITableView = {
         let view = UITableView(frame: .zero)
         view.backgroundColor = .backgroundDarkBlue
         return view
     }()
-        
+    
+    private lazy var refreshControl = {
+        let view = UIRefreshControl()
+        view.tintColor = .white
+        return view
+    }()
+    
     let viewModel = MatchListViewModel()
     
     override func viewDidLoad() {
@@ -37,14 +43,23 @@ class MatchListViewController: UIViewController {
         
         viewModel.matches.subscribe(onNext: { [weak self] _ in
             self?.tableView.reloadData()
+            self?.refreshControl.endRefreshing()
         })
         .disposed(by: bag)
+        
+        refreshControl.rx.controlEvent(.valueChanged)
+            .subscribe(onNext: { [weak self] _ in
+                self?.viewModel.reload()
+            })
+            .disposed(by: bag)
     }
     
     func setupUI() {
         title = "Partidas"
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .backgroundDarkBlue
+        
+        tableView.refreshControl = refreshControl
         
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .backgroundDarkBlue
@@ -56,7 +71,7 @@ class MatchListViewController: UIViewController {
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationController?.navigationBar.barTintColor = .white
         navigationController?.navigationBar.tintColor = .white
-
+        
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
