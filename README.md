@@ -5,6 +5,9 @@ CSTV is an app that displays CS: GO matches happening across several worldwide t
 | --- |
 ![Simulator Screen Recording - iPhone 14 Pro - 2023-02-26 at 23 03 53](https://user-images.githubusercontent.com/6511079/221455277-6f1283d6-d6b0-4bef-9708-765c49adb163.gif)
 
+### How to run the app
+The external libraries are installed in the project with SPM, so just pressing play should run the project correctly.
+
 ### Architecture
 This app was made in MVVM. The architecture follows the following Layers:
 * UI (```MatchListViewController```,```MatchDetailViewController```)
