@@ -101,9 +101,6 @@ class MatchCell: UITableViewCell {
         backgroundColor = .backgroundDarkBlue
         selectionStyle = .none
         
-        // TODO: Move to constants
-        
-        
         self.addSubview(containerView)
         containerView.addSubview(dateContainerView)
         containerView.addSubview(teamsView)

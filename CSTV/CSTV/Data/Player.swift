@@ -20,4 +20,3 @@ struct Player: Codable {
         case name
     }
 }
-

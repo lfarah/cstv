@@ -32,8 +32,6 @@ enum PlayerCellAlignment {
 }
 
 class PlayerCell: UICollectionViewCell {
-    
-    
     private lazy var nicknameLabel: UILabel = {
         let view = UILabel(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
