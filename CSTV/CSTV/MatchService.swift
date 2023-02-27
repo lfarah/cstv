@@ -128,7 +128,7 @@ struct Player: Codable {
     let name: String
     let firstName: String
     let lastName: String
-    let imageURL: String
+    let imageURL: String?
     
     enum CodingKeys: String, CodingKey {
         case firstName = "first_name"
