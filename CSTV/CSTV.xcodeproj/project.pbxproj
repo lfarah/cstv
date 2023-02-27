@@ -151,22 +151,11 @@
 			children = (
 				C217FF3429ABC29100BB317F /* AppDelegate.swift */,
 				C217FF3629ABC29100BB317F /* SceneDelegate.swift */,
-				C217FF6629ABC40900BB317F /* MatchListViewController.swift */,
-				C217FF8329AC373700BB317F /* MatchListViewModel.swift */,
-				C217FF7B29AC0FAB00BB317F /* MatchDetailViewController.swift */,
-				C217FF8529AC391B00BB317F /* MatchDetailViewModel.swift */,
-				C217FF7229ABCB0B00BB317F /* MatchCell.swift */,
-				C217FF6829ABC46500BB317F /* MatchService.swift */,
-				C217FF7729ABEF3E00BB317F /* UIColor+Extensions.swift */,
-				C217FF8B29AC3DCF00BB317F /* UITableView+Extensions.swift */,
-				C217FF8D29AC3E8800BB317F /* UICollectionView+Extensions.swift */,
-				C217FF7929AC056B00BB317F /* ViewConfigurable.swift */,
-				C217FF7D29AC124600BB317F /* MatchTeamsView.swift */,
-				C217FF7F29AC202100BB317F /* MatchTeamsHeader.swift */,
-				C217FF8129AC224500BB317F /* PlayerCell.swift */,
-				C217FF8729AC3B6F00BB317F /* AppService.swift */,
-				C217FF8929AC3D1600BB317F /* Keys.swift */,
-				C217FF8F29AC407700BB317F /* Model */,
+				C217FFA629AC42B100BB317F /* Flow */,
+				C217FFA329AC427300BB317F /* Networking */,
+				C217FFA029AC421800BB317F /* Extensions */,
+				C217FFA429AC428E00BB317F /* Components */,
+				C217FF8F29AC407700BB317F /* Data */,
 				C217FF3D29ABC29300BB317F /* Assets.xcassets */,
 				C217FF3F29ABC29300BB317F /* LaunchScreen.storyboard */,
 				C217FF4229ABC29300BB317F /* Info.plist */,
@@ -191,9 +180,11 @@
 			path = CSTVUITests;
 			sourceTree = "<group>";
 		};
-		C217FF8F29AC407700BB317F /* Model */ = {
+		C217FF8F29AC407700BB317F /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C217FF8929AC3D1600BB317F /* Keys.swift */,
+				C217FF7929AC056B00BB317F /* ViewConfigurable.swift */,
 				C217FF9029AC408D00BB317F /* Player.swift */,
 				C217FF9229AC40AD00BB317F /* MatchOpponentDetail.swift */,
 				C217FF9429AC40E900BB317F /* Serie.swift */,
@@ -203,7 +194,72 @@
 				C217FF9C29AC414C00BB317F /* Match.swift */,
 				C217FF9E29AC41C900BB317F /* NetworkError.swift */,
 			);
-			path = Model;
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C217FFA029AC421800BB317F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C217FF7729ABEF3E00BB317F /* UIColor+Extensions.swift */,
+				C217FF8B29AC3DCF00BB317F /* UITableView+Extensions.swift */,
+				C217FF8D29AC3E8800BB317F /* UICollectionView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C217FFA129AC425C00BB317F /* MatchList */ = {
+			isa = PBXGroup;
+			children = (
+				C217FF7229ABCB0B00BB317F /* MatchCell.swift */,
+				C217FF6629ABC40900BB317F /* MatchListViewController.swift */,
+				C217FF8329AC373700BB317F /* MatchListViewModel.swift */,
+			);
+			path = MatchList;
+			sourceTree = "<group>";
+		};
+		C217FFA229AC426700BB317F /* MatchDetail */ = {
+			isa = PBXGroup;
+			children = (
+				C217FF7B29AC0FAB00BB317F /* MatchDetailViewController.swift */,
+				C217FF8529AC391B00BB317F /* MatchDetailViewModel.swift */,
+			);
+			path = MatchDetail;
+			sourceTree = "<group>";
+		};
+		C217FFA329AC427300BB317F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C217FF8729AC3B6F00BB317F /* AppService.swift */,
+				C217FF6829ABC46500BB317F /* MatchService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		C217FFA429AC428E00BB317F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C217FF7D29AC124600BB317F /* MatchTeamsView.swift */,
+				C217FF7F29AC202100BB317F /* MatchTeamsHeader.swift */,
+				C217FF8129AC224500BB317F /* PlayerCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C217FFA629AC42B100BB317F /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				C217FFA729AC42C100BB317F /* Match */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		C217FFA729AC42C100BB317F /* Match */ = {
+			isa = PBXGroup;
+			children = (
+				C217FFA129AC425C00BB317F /* MatchList */,
+				C217FFA229AC426700BB317F /* MatchDetail */,
+			);
+			path = Match;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
