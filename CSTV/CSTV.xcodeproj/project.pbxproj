@@ -27,6 +27,8 @@
 		C217FF7E29AC124600BB317F /* MatchTeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C217FF7D29AC124600BB317F /* MatchTeamsView.swift */; };
 		C217FF8029AC202100BB317F /* MatchTeamsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C217FF7F29AC202100BB317F /* MatchTeamsHeader.swift */; };
 		C217FF8229AC224500BB317F /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C217FF8129AC224500BB317F /* PlayerCell.swift */; };
+		C217FF8429AC373700BB317F /* MatchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C217FF8329AC373700BB317F /* MatchListViewModel.swift */; };
+		C217FF8629AC391B00BB317F /* MatchDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C217FF8529AC391B00BB317F /* MatchDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		C217FF7D29AC124600BB317F /* MatchTeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTeamsView.swift; sourceTree = "<group>"; };
 		C217FF7F29AC202100BB317F /* MatchTeamsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTeamsHeader.swift; sourceTree = "<group>"; };
 		C217FF8129AC224500BB317F /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
+		C217FF8329AC373700BB317F /* MatchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListViewModel.swift; sourceTree = "<group>"; };
+		C217FF8529AC391B00BB317F /* MatchDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +128,9 @@
 				C217FF3429ABC29100BB317F /* AppDelegate.swift */,
 				C217FF3629ABC29100BB317F /* SceneDelegate.swift */,
 				C217FF6629ABC40900BB317F /* MatchListViewController.swift */,
+				C217FF8329AC373700BB317F /* MatchListViewModel.swift */,
 				C217FF7B29AC0FAB00BB317F /* MatchDetailViewController.swift */,
+				C217FF8529AC391B00BB317F /* MatchDetailViewModel.swift */,
 				C217FF7229ABCB0B00BB317F /* MatchCell.swift */,
 				C217FF6829ABC46500BB317F /* MatchService.swift */,
 				C217FF7729ABEF3E00BB317F /* UIColor+Extensions.swift */,
@@ -301,7 +307,9 @@
 				C217FF7C29AC0FAB00BB317F /* MatchDetailViewController.swift in Sources */,
 				C217FF7829ABEF3E00BB317F /* UIColor+Extensions.swift in Sources */,
 				C217FF7A29AC056B00BB317F /* ViewConfigurable.swift in Sources */,
+				C217FF8429AC373700BB317F /* MatchListViewModel.swift in Sources */,
 				C217FF3529ABC29100BB317F /* AppDelegate.swift in Sources */,
+				C217FF8629AC391B00BB317F /* MatchDetailViewModel.swift in Sources */,
 				C217FF8229AC224500BB317F /* PlayerCell.swift in Sources */,
 				C217FF3729ABC29100BB317F /* SceneDelegate.swift in Sources */,
 				C217FF6729ABC40900BB317F /* MatchListViewController.swift in Sources */,

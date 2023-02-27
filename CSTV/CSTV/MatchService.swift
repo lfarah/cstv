@@ -158,7 +158,6 @@ struct MatchService {
                 switch result.result {
                 case .success(let object):
                     emitter.onNext(object)
-                    print("results: \(object)")
                 case .failure(let error):
                     print("error: \(error)")
                     emitter.onError(error)
@@ -183,7 +182,6 @@ struct MatchService {
                 switch result.result {
                 case .success(let object):
                     emitter.onNext(object)
-                    print("results: \(object)")
                 case .failure(let error):
                     print("error: \(error)")
                     emitter.onError(error)
@@ -208,9 +206,7 @@ struct MatchService {
                 switch result.result {
                 case .success(let object):
                     emitter.onNext(object)
-                    print("results: \(object)")
                 case .failure(let error):
-                    print("error: \(error)")
                     emitter.onError(error)
                 }
             }

@@ -14,21 +14,16 @@ class MatchListViewController: UIViewController {
     
     let bag = DisposeBag()
     
-    let tableView = UITableView()
-    
-    var matches: [Match] = []
+    lazy var tableView: UITableView = {
+        let view = UITableView(frame: .zero)
+        view.backgroundColor = .backgroundDarkBlue
+        return view
+    }()
+        
+    let viewModel = MatchListViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        Observable.zip(service.loadRunningMatches().catchAndReturn([]), service.loadUpcomingMatches().catchAndReturn([]))
-            .map { $0.0 + $0.1 }
-            .subscribe(onNext: { [weak self] matches in
-                print("matches: \(matches)")
-                self?.matches = matches
-                self?.tableView.reloadData()
-            })
-            .disposed(by: bag)
         
         bind()
         setupUI()
@@ -39,11 +34,18 @@ class MatchListViewController: UIViewController {
         tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(MatchCell.self, forCellReuseIdentifier: "MatchCell")
+        
+        viewModel.matches.subscribe(onNext: { [weak self] _ in
+            self?.tableView.reloadData()
+        })
+        .disposed(by: bag)
     }
     
     func setupUI() {
         title = "Partidas"
         navigationController?.navigationBar.prefersLargeTitles = true
+        view.backgroundColor = .backgroundDarkBlue
+        
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .backgroundDarkBlue
         appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
@@ -67,7 +69,7 @@ class MatchListViewController: UIViewController {
 // MARK: - UITableViewDataSource
 extension MatchListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        matches.count
+        viewModel.matches.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -75,7 +77,7 @@ extension MatchListViewController: UITableViewDataSource {
             preconditionFailure("Cell not registered")
         }
         
-        let match = matches[indexPath.row]
+        let match = viewModel.matches.value[indexPath.row]
         cell.configure(with: match)
         return cell
     }
@@ -83,8 +85,11 @@ extension MatchListViewController: UITableViewDataSource {
 
 extension MatchListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let match = matches[indexPath.row]
-        let detailVC = MatchDetailViewController(match: match)
+        let match = viewModel.matches.value[indexPath.row]
+        
+        // If I had more time I would've implemented a Coordinator
+        let viewModel = MatchDetailViewModel(match: match)
+        let detailVC = MatchDetailViewController(viewModel: viewModel)
         navigationController?.pushViewController(detailVC, animated: true)
     }
 }
